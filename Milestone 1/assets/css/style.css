@@ -21,6 +21,9 @@
     height: 97vh;
     width: 90%;
 }
+
+
+/* SIDEBAR */
 #sidebar{
     background-color: blue;
     width: 30%;
@@ -28,16 +31,17 @@
     height: 100%;
 }
 
-#main_chat{
-    background-color: plum;
-    width: 70%;
-    min-width: 400px;
-    height: 100%;
-}
-
-#side_header, .receive_alerts{
+#side_header, .receive_alerts, .contact{
     height: 80px;
     background-color: powderblue;
+}
+
+#side_header{
+    background-color: var(--gray_10);
+}
+
+.actions{
+    color: var(--gray_50);
 }
 
 .user_searchbar{
@@ -45,7 +49,46 @@
     height: 60px;
 }
 
-.user_searchbar > input{
+.input-group{
     height: 70%;
-    width: 90%;
+    width: 95% !important;
+}
+.input-group-text, .input-group > input {
+    background-color: #fff !important;
+    border: none !important;
+    color: var(--gray_50) !important;
+}
+
+
+#contacts{
+    background-color: rebeccapurple;
+    height: calc(100% - 60px - 80px * 2);
+    overflow-y: auto;
+}
+
+
+
+.contact_img, .user_img{
+    height: 60px;
+    width: 60px;
+}
+.contact_img > img, .user_img > img{
+    border-radius: 50%;
+}
+
+.username{
+    font-size: 1.1rem;
+}
+
+.contact.active{
+    /* background-color: ; */
+}
+
+
+/* MAIN CHAT */
+#main_chat{
+    background-color: plum;
+    width: 70%;
+    min-width: 400px;
+    height: 100%;
 }
