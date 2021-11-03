@@ -14,8 +14,38 @@
     background: linear-gradient(0deg, rgba(218,219,212,1) 90%, rgba(0,150,136,1) 90%);
 }
 
-.debug main{
-    background-color: aqua;
-    height: 95vh;
-    width: 80%;
+
+
+#main_app{
+    /* background-color: aqua; */
+    height: 97vh;
+    width: 90%;
+}
+#sidebar{
+    background-color: blue;
+    width: 30%;
+    min-width: 300px;
+    height: 100%;
+}
+
+#main_chat{
+    background-color: plum;
+    width: 70%;
+    min-width: 400px;
+    height: 100%;
+}
+
+#side_header, .receive_alerts{
+    height: 80px;
+    background-color: powderblue;
+}
+
+.user_searchbar{
+    background-color: purple;
+    height: 60px;
+}
+
+.user_searchbar > input{
+    height: 70%;
+    width: 90%;
 }

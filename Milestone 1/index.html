@@ -12,12 +12,28 @@
 </head>
 <body class="debug">
     <div id="app">
+        <!-- BG -->
         <div class="background d-flex align-items-center">
-            <main class="container">
-                <aside>
-                    <header></header>
+            <!-- Main app -->
+            <div id="main_app" class="container d-flex">
+                <!-- Sidebar -->
+                <aside id="sidebar">
+                    <!-- User info  -->
+                    <header id="side_header" class="d-flex"></header>
+
+                    <!-- Enable Alert notification -->
+                    <div class="receive_alerts"></div>
+
+                    <div class="user_searchbar d-flex align-items-center justify-content-center">
+                        <input type="text" placeholder="Cerca o inizia una nuova chat" id="">
+                    </div>
                 </aside>
-            </main>
+                
+                <!-- Chat -->
+                <main id="main_chat">
+                    
+                </main>
+            </div>
         </div>
     </div>
 
