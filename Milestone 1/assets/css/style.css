@@ -6,26 +6,27 @@
     --gray_10: #EAEAEA;
     --gray_50: #B1B1B1;
     --gray_80: #6B7376;
+    --select_grey: #E9EBEB;
 }
 
 
 .background{
     height: 100vh;
-    background: linear-gradient(0deg, rgba(218,219,212,1) 90%, rgba(0,150,136,1) 90%);
+    background: rgb(206,220,222);
+    background: linear-gradient(0deg, rgba(206,220,222,1) 0%, rgba(218,219,212,1) 89.5%, rgba(0,150,136,1) 89.5%);
 }
 
 
 
 #main_app{
-    /* background-color: aqua; */
     height: 97vh;
     width: 90%;
 }
 
 
 /* SIDEBAR */
+/* Side header */
 #sidebar{
-    background-color: blue;
     width: 30%;
     min-width: 300px;
     height: 100%;
@@ -33,7 +34,6 @@
 
 #side_header, .receive_alerts, .contact{
     height: 80px;
-    background-color: powderblue;
 }
 
 #side_header{
@@ -44,11 +44,27 @@
     color: var(--gray_50);
 }
 
-.user_searchbar{
-    background-color: purple;
-    height: 60px;
+/* Side main */
+/* enable alerts */
+.receive_alerts{
+    background-color: var(--secondary);
+}
+.rounded-circle{
+    color: var(--secondary);
+    background-color: white;
+    width: 50px;
+    height: 50px;   
+}
+.enable_alerts{
+    color: var(--gray_80);
+    font-size: .9rem;
 }
 
+/* search bar */
+.user_searchbar{
+    background-color: #FAFAFA;
+    height: 60px;
+}
 .input-group{
     height: 70%;
     width: 95% !important;
@@ -60,14 +76,17 @@
 }
 
 
+/* contacts section */
 #contacts{
-    background-color: rebeccapurple;
     height: calc(100% - 60px - 80px * 2);
-    overflow-y: auto;
+    overflow-y: scroll;
+    background-color: #fff;
 }
 
-
-
+.contact{
+    background-color: #fff;
+    border-bottom: 1px solid var(--gray_10);
+}
 .contact_img, .user_img{
     height: 60px;
     width: 60px;
@@ -81,7 +100,7 @@
 }
 
 .contact.active{
-    /* background-color: ; */
+    background-color: var(--select_grey);
 }
 
 

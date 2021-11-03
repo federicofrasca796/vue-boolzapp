@@ -23,7 +23,7 @@
                     <!-- Side Header - user info  -->
                     <header id="side_header" class="d-flex align-items-center px-3">
                         <div class="user_img">
-                            <img src="../img/avatar_2.jpg" alt="user avatar" width="100%">
+                            <img src="../img/avatar_2.jpg" alt="user avatar" class="w-100">
                         </div>
                         <span class="username ms-3">Nome Utente</span>
 
@@ -35,7 +35,15 @@
                     </header>
 
                     <!-- Enable Alert notification -->
-                    <div class="receive_alerts"></div>
+                    <div class="receive_alerts px-4 d-flex align-items-center">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fas fa-bell-slash fs-5"></i>
+                        </div>
+                        <div class="alerts_txt ms-3">
+                            <div class="">Ricevi notifiche di nuovi messaggi</div>
+                            <a href="#" class="enable_alerts">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
                     
                     <!-- Searchbar  -->
                     <div class="user_searchbar d-flex align-items-center justify-content-center">
@@ -51,13 +59,22 @@
                     <div id="contacts">
                         <div class="contact active d-flex align-items-center px-4 py-2">
                             <div class="contact_img">
-                                <img src="../img/avatar_1.jpg" alt="avatar 1" width="100%">
+                                <img src="../img/avatar_1.jpg" alt="avatar 1" class="w-100">
                             </div>
                             <div class="contact_txt align-self-start ps-3">
                                 <div class="username">Michele</div>
                                 <div class="msg_preview"></div>
                             </div>
-
+                        </div>
+                        
+                        <div class="contact d-flex align-items-center px-4 py-2">
+                            <div class="contact_img">
+                                <img src="../img/avatar_3.jpg" alt="avatar 3" class="w-100">
+                            </div>
+                            <div class="contact_txt align-self-start ps-3">
+                                <div class="username">Alfonzo</div>
+                                <div class="msg_preview"></div>
+                            </div>
                         </div>
                     </div>
                 </aside>
