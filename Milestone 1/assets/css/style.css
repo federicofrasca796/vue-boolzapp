@@ -8,3 +8,14 @@
     --gray_80: #6B7376;
 }
 
+
+.background{
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(218,219,212,1) 90%, rgba(0,150,136,1) 90%);
+}
+
+.debug main{
+    background-color: aqua;
+    height: 95vh;
+    width: 80%;
+}
