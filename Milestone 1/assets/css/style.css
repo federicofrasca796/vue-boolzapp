@@ -7,6 +7,8 @@
     --gray_50: #B1B1B1;
     --gray_80: #6B7376;
     --select_grey: #E9EBEB;
+    --sent_msg: #D5F9BA;
+    --received_msg: #ffff;
 }
 
 
@@ -95,6 +97,9 @@
     background-color: #fff;
     border-bottom: 1px solid var(--gray_10);
 }
+.contact:hover{
+    background-color: var(--select_grey);
+}
 .contact_img, .user_img{
     height: 60px;
     width: 60px;
@@ -137,9 +142,29 @@
     background-color: var(--beige);
 }
 .chat_input a{
-    color: var(--gray_80)
+    color: var(--gray_80);
 }
 .chat_input > input{
     border: none;
     height: 70%;
+}
+
+
+.msg{
+    display: inline-block;
+    border-radius: 10px;
+}
+.sent_msg{
+    background-color: var(--sent_msg);
+    float: right;
+}
+.msg_date{
+    font-size: .8rem;
+    color: var(--gray_50);
+    text-align: end;
+}
+
+.received_msg{
+    background-color: var(--received_msg);
+    float: left;
 }
