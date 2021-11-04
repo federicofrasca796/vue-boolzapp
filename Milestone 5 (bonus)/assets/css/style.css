@@ -1,0 +1,226 @@
+:root{
+    --primary: #009688;
+    --secondary: #8EDAFC;
+    --primary_light: #DADBD4;
+    --beige: #F3EEEA;
+    --gray_10: #EAEAEA;
+    --gray_50: #B1B1B1;
+    --gray_80: #6B7376;
+    --select_grey: #E9EBEB;
+    --sent_msg: #D5F9BA;
+    --received_msg: #ffff;
+}
+
+a:hover{
+    color: inherit !important;
+}
+
+.background{
+    height: 100vh;
+    background: rgb(206,220,222);
+    background: linear-gradient(0deg, rgba(206,220,222,1) 0%, rgba(218,219,212,1) 89.5%, rgba(0,150,136,1) 89.5%);
+}
+
+#main_app{
+    height: 97vh;
+    width: 90%;
+}
+
+
+/* SIDEBAR */
+/* Side header */
+#sidebar{
+    width: 30%;
+    min-width: 300px;
+    height: 100%;
+}
+
+#side_header {
+    border-right: 2px solid #dfdfdf;
+}
+
+#side_header, 
+#chat_header, 
+.receive_alerts, 
+.contact, 
+.chat_input{
+    height: 80px;
+}
+
+#side_header, #chat_header{
+    background-color: var(--gray_10);
+}
+
+.actions{
+    color: var(--gray_50);
+    flex-shrink: 0;
+}
+
+/* Side main */
+/* enable alerts */
+.receive_alerts{
+    background-color: var(--secondary);
+}
+.rounded-circle{
+    color: var(--secondary);
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+}
+.enable_alerts{
+    color: var(--gray_80);
+    font-size: .9rem;
+}
+
+/* search bar */
+.user_searchbar{
+    background-color: #FAFAFA;
+    height: 60px;
+}
+.input-group{
+    height: 70%;
+    width: 95% !important;
+}
+.input-group-text, .input-group > input {
+    background-color: #fff !important;
+    border: none !important;
+    color: var(--gray_50) !important;
+}
+
+
+/* contacts section */
+#contacts{
+    height: calc(100% - 60px - 80px * 2);
+    overflow-y: scroll;
+    background-color: #fff;
+}
+
+.contact{
+    background-color: #fff;
+    border-bottom: 1px solid var(--gray_10);
+}
+.contact:hover{
+    background-color: var(--select_grey);
+}
+.contact_img, .user_img{
+    height: 60px;
+    width: 60px;
+}
+.contact_img > img, .user_img > img{
+    border-radius: 50%;
+}
+
+.username{
+    font-size: 1.1rem;
+    flex-shrink: 2;
+}
+
+.contact.active{
+    background-color: var(--select_grey);
+}
+
+.msg_preview, .last_seen{
+    color: var(--gray_80);
+}
+
+/* MAIN CHAT */
+#main_chat{
+    width: 70%;
+    min-width: 400px;
+    height: 100%;
+}
+
+.chat_options > a{
+    color: var(--gray_50);
+}
+
+.chat_body{
+    background-image: url('../../../img/mine.jpg');
+    background-size: contain;
+    height: calc(100% - 80px * 2);
+    overflow-y: scroll;
+}
+
+.chat_input{
+    background-color: var(--beige);
+}
+.chat_input a,
+.msg_more > a{
+    color: var(--gray_80);
+}
+.chat_input > input{
+    border: none;
+    height: 70%;
+}
+
+
+.msg{
+    position: relative;
+    border-radius: .3rem;
+    max-width: 45%;
+}
+.sent_msg{
+    background-color: var(--sent_msg);
+    margin-left: auto;
+}
+.msg_date{
+    font-size: .8rem;
+    color: var(--gray_50);
+    text-align: end;
+}
+
+.received_msg{
+    background-color: var(--received_msg);
+}
+
+.msg_hover{
+    visibility: hidden;
+    /* transition: visibility .2s ease-in-out; */
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+.msg_more {
+    font-size: .8rem;
+    padding: .4rem 1rem 2rem;
+    border-radius: .3rem;
+    text-align: right;
+    display: inline-block;
+}
+a.msg_more:hover{
+    color: var(--gray_80);
+}
+.msg:hover .msg_hover{
+    visibility: visible;
+    color: var(--gray_80);
+}
+
+.sent_msg .msg_more{
+    /* background: radial-gradient(circle, var(--sent_msg) 35%, rgba(214,249,186,0) 80%); */
+    background: linear-gradient(20deg, rgba(214,249,186,0) 0%, var(--sent_msg) 80%);
+}
+.received_msg .msg_more{
+    /* background: radial-gradient(circle, var(--received_msg) 35%, rgba(255, 255, 255, 0) 80%); */
+    background: linear-gradient(20deg, rgba(255,255,255,0) 0%, var(--received_msg) 80%);
+}
+
+.popup{
+    border: none;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    /* display: inline-block; */
+    padding: .5rem 1rem;
+    position: absolute;
+    z-index: 9999;
+    top: 2.2rem;
+    right: .5rem;
+}
+.popup a{
+    color: inherit;
+    text-decoration: none;
+}
+
