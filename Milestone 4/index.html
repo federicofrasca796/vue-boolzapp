@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzap</title>
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Bootstrap 5.1.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../img/avatar_1.jpg">
+</head>
+<body>
+    <div id="app">
+        <!-- BG -->
+        <div class="background d-flex align-items-center">
+            <!-- Main app -->
+            <div id="main_app" class="container d-flex">
+                <!-- Sidebar -->
+                <aside id="sidebar">
+                    <!-- Side Header - user info  -->
+                    <header id="side_header" class="d-flex align-items-center px-3">
+                        <div class="user_img">
+                            <img :src="'../img/avatar' + user.avatar + '.jpg'" alt="user avatar" class="w-100">
+                        </div>
+                        <span class="username ms-3">{{ user.name }}</span>
+
+                        <div class="actions ms-auto fs-4">
+                            <i class="fas fa-circle-notch px-2"></i>
+                            <i class="fas fa-comment-alt px-2"></i>
+                            <i class="fas fa-ellipsis-v px-2"></i>
+                        </div>
+                    </header>
+
+                    <!-- Enable Alert notification -->
+                    <div class="receive_alerts px-4 d-flex align-items-center">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center">
+                            <i class="fas fa-bell-slash fs-5"></i>
+                        </div>
+                        <div class="alerts_txt ms-3">
+                            <div class="">Ricevi notifiche di nuovi messaggi</div>
+                            <a href="#" class="enable_alerts">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Searchbar  -->
+                    <div class="user_searchbar d-flex align-items-center justify-content-center">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <!-- INPUT -->
+                            <input type="search" class="form-control" placeholder="Cerca o inizia una nuova chat" v-model="inputSearch" @keyup="searchContact">
+                          </div>
+                    </div>
+
+                    
+                    <!-- Contacts -->
+                    <div id="contacts">
+                        <div  v-for="(contact, index) in contacts">
+
+                            <div v-if="contact.visible" @click="selectChat(index)" class="contact d-flex align-items-center px-4 py-2" :class="contact.select? 'active' : ''">
+
+                                <div class="contact_img">
+                                    <img :src="'../img/avatar' + contact.avatar + '.jpg'" :alt="'avatar n.' + contact.avatar" class="w-100">
+                                </div>
+                                <div class="contact_txt align-self-start ps-3">
+                                    <div class="username">{{contact.name}}</div>
+                                    <div class="msg_preview"></div>
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                
+                <!-- Chat -->
+                <main id="main_chat">
+                    <!-- Chat header (contact info, last seen..) -->
+                    <header id="chat_header" class="d-flex align-items-center px-3">
+                        <div class="user_img">
+                            <img :src="'../img/avatar' + contacts[selectedObj].avatar + '.jpg'" alt="user avatar" class="w-100">
+                        </div>
+
+                        <div class="contact_txt ps-3">
+                            <div class="username">{{ contacts[selectedObj].name }}</div>
+                            <div class="last_seen">Ultimo accesso oggi alle</div>
+                        </div>
+
+                        <div class="chat_options fs-4 ms-auto">
+                            <a href="#">
+                                <i class="fas fa-search px-2"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa fa-paperclip px-2"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fas fa-ellipsis-v px-2"></i>
+                            </a>
+                        </div>
+                    </header>
+
+                    <!-- Chat body -->
+                    <div class="chat_body p-5">
+
+                        <div v-for="message in contacts[selectedObj].messages">
+                            <div class="msg rounded-3 py-2 px-3 my-2" :class="message.status === 'sent'? 'sent_msg' : 'received_msg'">
+                                <div class="msg_content">{{ message.text }}</div>
+                                <div class="msg_date">{{ message.date }}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat footer -->
+                    <footer class="chat_input d-flex align-items-center justify-content-between">
+                        <a href="#">
+                            <i class="far fa-smile fs-2 px-4"></i>
+                        </a>
+                        
+                        <!-- INPUT -->
+                        <input type="text" placeholder="Scrivi un messaggio" class="w-100 px-3 rounded-1" v-model="inputMsg" @keyup.enter="sendMsg">
+                        
+                        <a href="#">
+                            <i class="fas fa-microphone fs-2 px-4"></i>
+                        </a>
+                    </footer>
+                </main>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Day.js CDN & plugin -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
+    <!-- Vue JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
