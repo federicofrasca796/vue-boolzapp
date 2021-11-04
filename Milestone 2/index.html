@@ -100,8 +100,8 @@
                     </header>
 
                     <!-- Chat body -->
-                    <div class="chat_body  p-5">
-                        <div class="msg sent_msg py-2 px-3">
+                    <div class="chat_body p-5">
+                        <!-- <div class="msg sent_msg py-2 px-3">
                             <div class="msg_content">Hai portato a spasso il cane?</div>
                             <div class="msg_date">10/01/2020</div>
                         </div>
@@ -109,6 +109,13 @@
                         <div class="msg received_msg py-2 px-3">
                             <div class="msg_content">Si</div>
                             <div class="msg_date">10/01/2020</div>
+                        </div> -->
+
+                        <div v-for="message in contacts[selectedObj].messages">
+                            <div class="msg py-2 px-3" :class="message.status === 'sent'? 'sent_msg' : 'received_msg'">
+                                <div class="msg_content">{{ message.text }}</div>
+                                <div class="msg_date">{{ message.date }}</div>
+                            </div>
                         </div>
                     </div>
 

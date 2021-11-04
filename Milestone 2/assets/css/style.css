@@ -157,6 +157,7 @@
     /* display: inline-block; */
     border-radius: 10px;
     max-width: 40%;
+    margin: .5rem 0;
 }
 .sent_msg{
     background-color: var(--sent_msg);
