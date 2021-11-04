@@ -139,26 +139,31 @@ const app = new Vue({
             const selectedMsgArr = this.contacts[this.selectedObj].messages;
             // console.log(selectedMsgArr);
 
+            const nowSent = dayjs().format('DD/MM/YYYY HH:mm:ss');
             //creo un oggetto contenente le key tipiche di 'messages'
             const newSentMsg = {
-                date: 'day.js', //complete here
+                date: nowSent,
                 text: this.inputMsg,
                 status: 'sent'
             }
 
             //pusho l'oggetto nell'array 'messages' dell'utente selezionato 
             selectedMsgArr.push(newSentMsg);
+            //svuoto l'input
+            this.inputMsg = '';
 
-
-            //restituisco una risposta dopo un intervallo di tempo
-            const newReceivedMsg = {
-                date: 'day.js', //complete here
-                text: 'Ok.',
-                status: 'received'
-            }
+            //imposto un timer dopo il quale il messaggio apparirà.
             setTimeout(()=>{
-                selectedMsgArr.push(newReceivedMsg); 
-            }, 1000)
+                //creo la nuova data dopo che scorre il tempo impostato
+                const nowReceived = dayjs().format('DD/MM/YYYY HH:mm:ss');
+                //restituisco una risposta dopo un intervallo di tempo
+                const newReceivedMsg = {
+                    date: nowReceived, 
+                    text: 'Ok.',
+                    status: 'received'
+                };
+                selectedMsgArr.push(newReceivedMsg);
+            }, 1000);
         }
     }
 });
