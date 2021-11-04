@@ -105,7 +105,9 @@ const app = new Vue({
                 ],
             select: false,
             },
-        ]
+        ],
+
+        selectedObj: 0,
     },
    
     methods:{
@@ -113,14 +115,14 @@ const app = new Vue({
             // console.log(this.contacts[index].select);
             if (!this.select){
                 //imposto select=false sugli oggetti che hanno true
-                this.contacts.forEach(contact => {
-                    contact.select = false;
-                });
+                this.contacts.forEach(contact => {contact.select = false;});
                 //imposto select=true per l'elemento clickato.
                 this.contacts[index].select = true;
             }
 
-            // console.log(this.contacts);
+            // console.log(this.contacts[index]);
+            this.selectedObj = index;
+            console.log(selectedObj);
             // richiamo nell'html tramite VueJS l'oggetto (il contatto) selezionato e inserisco le sue key nella chat.
 
         }

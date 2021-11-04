@@ -78,11 +78,11 @@
                     <!-- Chat header (contact info, last seen..) -->
                     <header id="chat_header" class="d-flex align-items-center px-3">
                         <div class="user_img">
-                            <img src="../img/avatar_1.jpg" alt="user avatar" class="w-100">
+                            <img :src="'../img/avatar' + contacts[selectedObj].avatar + '.jpg'" alt="user avatar" class="w-100">
                         </div>
 
                         <div class="contact_txt ps-3">
-                            <div class="username">{{  }}</div>
+                            <div class="username">{{ contacts[selectedObj].name }}</div>
                             <div class="last_seen">Ultimo accesso oggi alle</div>
                         </div>
 
