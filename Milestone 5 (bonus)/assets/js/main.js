@@ -216,15 +216,15 @@ const app = new Vue({
 
         activatePopup(message){
             // se msgPopup è false, rendilo true e attiva il popup soddisfando il requisito del v-if nell'html 
-
-            console.log(message.msgPopup);
             if (!message.msgPopup) {
                 message.msgPopup = true;
-                console.log(message.msgPopup);
             } else {
                 message.msgPopup = false;
-                console.log(message.msgPopup);
             }
+        },
+
+        deleteMsg(index){
+            this.contacts[this.selectedObj].messages.splice(index, 1);
         }
     }
 });

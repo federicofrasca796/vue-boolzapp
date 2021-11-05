@@ -109,14 +109,17 @@
                         <div v-for="(message, index) in contacts[selectedObj].messages" class="d-flex flex-column">
                             
                             <div class="msg py-2 px-3 my-2" :class="message.status === 'sent'? 'sent_msg' : 'received_msg'">
+
                                 <div class="msg_content">{{ message.text }}</div>
                                 <div class="msg_date">{{ message.date }}</div>
+
                                 <!-- Chevron -->
                                 <div class="msg_hover">
                                     <a href="#" class="msg_more"  @click="activatePopup(message)">
                                         <i class="fas fa-chevron-down"></i>
                                     </a>
                                 </div>
+                                <!-- Popup -->
                                 <ul class="popup rounded-2" v-if="message.msgPopup">
                                     <li class="my-2">
                                         <a href="#">
@@ -124,7 +127,7 @@
                                         </a> 
                                     </li>
                                     <li class="my-2">
-                                        <a href="#">
+                                        <a href="#" @click="deleteMsg(index)">
                                             Delete message
                                         </a> 
                                     </li>

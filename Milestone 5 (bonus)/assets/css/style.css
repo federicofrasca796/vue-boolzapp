@@ -224,6 +224,7 @@ a.msg_more:hover{
     z-index: 9999;
     top: 2.2rem;
     right: .5rem;
+    width: 100%;
 }
 .popup a{
     color: inherit;
