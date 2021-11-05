@@ -11,8 +11,11 @@
     --received_msg: #ffff;
 }
 
+a{
+    color: var(--gray_50) !important;
+}
 a:hover{
-    color: inherit !important;
+    color: var(--gray_80) !important;
 }
 
 .background{
@@ -69,7 +72,7 @@ a:hover{
     flex-shrink: 0;
 }
 .enable_alerts{
-    color: var(--gray_80);
+    color: var(--gray_80) !important;
     font-size: .9rem;
 }
 
@@ -101,7 +104,7 @@ a:hover{
     border-bottom: 1px solid var(--gray_10);
 }
 .contact:hover{
-    background-color: var(--select_grey);
+    background-color: #e9ebeb3f;
 }
 .contact_img, .user_img{
     height: 60px;
@@ -121,7 +124,7 @@ a:hover{
     background-color: var(--select_grey);
 }
 
-.contact_txt{
+#sidebar .contact_txt{
     width: calc(100% - 60px);
 }
 .msg_preview, .last_seen{
@@ -209,9 +212,10 @@ a:hover{
     display: inline-block;
 }
 
+.msg_hover a,
 .msg:hover a,
 a.msg_more:hover{
-    color: var(--gray_80);
+    color: var(--gray_80) !important;
 }
 .msg:hover .msg_hover{
     visibility: visible;
@@ -220,7 +224,7 @@ a.msg_more:hover{
 
 .sent_msg .msg_more{
     /* background: radial-gradient(circle, var(--sent_msg) 35%, rgba(214,249,186,0) 80%); */
-    background: linear-gradient(20deg, rgba(214,249,186,0) 0%, var(--sent_msg) 80%);
+    background: linear-gradient(20deg, rgba(214,249,186,0) 0%, var(--sent_msg) 70%);
 }
 .received_msg .msg_more{
     /* background: radial-gradient(circle, var(--received_msg) 35%, rgba(255, 255, 255, 0) 80%); */
