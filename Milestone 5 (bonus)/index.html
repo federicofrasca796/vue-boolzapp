@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="contact_txt align-self-start ps-3">
                                     <div class="username">{{contact.name}}</div>
-                                    <div class="msg_preview"></div>
+                                    <div class="msg_preview">{{ contact.messages[contact.messages.length - 1].text }}</div>
                                 </div>                            
                             </div>
                         </div>
@@ -87,7 +87,7 @@
 
                         <div class="contact_txt ps-3">
                             <div class="username">{{ contacts[selectedObj].name }}</div>
-                            <div class="last_seen">Ultimo accesso oggi alle</div>
+                            <div class="last_seen">Ultimo accesso {{contacts[selectedObj].lastseen}}</div>
                         </div>
 
                         <div class="chat_options fs-4 ms-auto">
@@ -158,6 +158,7 @@
 
     <!-- Day.js CDN & plugin -->
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.10.7/plugin/calendar.min.js" integrity="sha512-4a7YGwyJY5Q5Bk00N5JP998Ea01KANjcbAn5cx9RZLPjGkkzO0Q/1NhfMXPpTQ1phE/jLLBQzMlbXqcayTmfDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/dayjs@1.8.21/plugin/utc.js"></script>
     <!-- Vue JS -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
