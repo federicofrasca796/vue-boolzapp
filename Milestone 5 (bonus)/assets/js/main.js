@@ -220,6 +220,9 @@ const app = new Vue({
         activatePopup(message){
             // se msgPopup è false, rendilo true e attiva il popup soddisfando il requisito del v-if nell'html 
             if (!message.msgPopup) {
+                this.contacts[this.selectedObj].messages.forEach(eachMessage => {
+                    eachMessage.msgPopup = false
+                });
                 message.msgPopup = true;
             } else {
                 message.msgPopup = false;

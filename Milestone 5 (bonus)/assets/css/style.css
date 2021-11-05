@@ -142,6 +142,7 @@ a:hover{
 
 .chat_options > a{
     color: var(--gray_50);
+    flex-shrink: 0;
 }
 
 .chat_body{
@@ -169,11 +170,15 @@ a:hover{
 .msg{
     position: relative;
     border-radius: .3rem;
+    max-width: 50%;
 }
-
 .sent_msg{
     background-color: var(--sent_msg);
     align-self: flex-end;
+}
+
+.msg_content{
+    word-wrap: break-word;
 }
 .msg_date{
     font-size: .8rem;
@@ -193,7 +198,6 @@ a:hover{
     position: absolute;
     top: 0;
     right: 0;
-
 }
 
 /* Msg popup */
@@ -204,6 +208,7 @@ a:hover{
     text-align: right;
     display: inline-block;
 }
+
 .msg:hover a,
 a.msg_more:hover{
     color: var(--gray_80);
