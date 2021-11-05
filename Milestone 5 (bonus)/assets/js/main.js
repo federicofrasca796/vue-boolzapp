@@ -43,17 +43,23 @@ const app = new Vue({
                 {
                 date: '10/01/2020 15:30:55',
                 text: 'Hai portato a spasso il cane?',
-                status: 'sent'
+                status: 'sent',
+                msgPopup: false,
+
                 },
                 {
                 date: '10/01/2020 15:50:00',
                 text: 'Ricordati di dargli da mangiare',
-                status: 'sent'
+                status: 'sent',
+                msgPopup: false,
+
                 },
                 {
                 date: '10/01/2020 16:15:22',
                 text: 'Tutto fatto!',
-                status: 'received'
+                status: 'received',
+                msgPopup: false,
+
                 }
                 ],
             select: true,
@@ -67,17 +73,23 @@ const app = new Vue({
                 {
                 date: '20/03/2020 16:30:00',
                 text: 'Ciao come stai?',
-                status: 'sent'
+                status: 'sent',
+                msgPopup: false,
+
                 },
                 {
                 date: '20/03/2020 16:30:55',
                 text: 'Bene grazie! Stasera ci vediamo?',
-                status: 'received'
+                status: 'received',
+                msgPopup: false,
+
                 },
                 {
                 date: '20/03/2020 16:35:00',
                 text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-                status: 'sent'
+                status: 'sent',
+                msgPopup: false,
+
                 }
                 ],
             select: false,
@@ -91,17 +103,23 @@ const app = new Vue({
                 {
                 date: '28/03/2020 10:10:40',
                 text: 'La Marianna va in campagna',
-                status: 'received'
+                status: 'received',
+                msgPopup: false,
+
                 },
                 {
                 date: '28/03/2020 10:20:10',
                 text: 'Sicuro di non aver sbagliato chat?',
-                status: 'sent'
+                status: 'sent',
+                msgPopup: false,
+
                 },
                 {
                 date: '28/03/2020 16:15:22',
                 text: 'Ah scusa!',
-                status: 'received'
+                status: 'received',
+                msgPopup: false,
+
                 }
                 ],
             select: false,
@@ -115,12 +133,16 @@ const app = new Vue({
                 {
                 date: '10/01/2020 15:30:55',
                 text: 'Lo sai che ha aperto una nuova pizzeria?',
-                status: 'sent'
+                status: 'sent',
+                msgPopup: false,
+
                 },
                 {
                 date: '10/01/2020 15:50:00',
                 text: 'Si, ma preferirei andare al cinema',
-                status: 'received'
+                status: 'received',
+                msgPopup: false,
+
                 }
                 ],
             select: false,
@@ -190,6 +212,19 @@ const app = new Vue({
                     contact.visible = false;
                 }
             });
+        },
+
+        activatePopup(message){
+            // se msgPopup è false, rendilo true e attiva il popup soddisfando il requisito del v-if nell'html 
+
+            console.log(message.msgPopup);
+            if (!message.msgPopup) {
+                message.msgPopup = true;
+                console.log(message.msgPopup);
+            } else {
+                message.msgPopup = false;
+                console.log(message.msgPopup);
+            }
         }
     }
 });
