@@ -106,6 +106,7 @@ a:hover{
 .contact_img, .user_img{
     height: 60px;
     width: 60px;
+    flex-shrink: 0;
 }
 .contact_img > img, .user_img > img{
     border-radius: 50%;
@@ -120,8 +121,16 @@ a:hover{
     background-color: var(--select_grey);
 }
 
+.contact_txt{
+    width: calc(100% - 60px);
+}
 .msg_preview, .last_seen{
     color: var(--gray_80);
+}
+.msg_preview{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* MAIN CHAT */
