@@ -183,7 +183,8 @@ const app = new Vue({
             const newSentMsg = {
                 date: nowSent,
                 text: this.inputMsg,
-                status: 'sent'
+                status: 'sent',
+                msgPopup: false,
             }
 
             //pusho l'oggetto nell'array 'messages' dell'utente selezionato 
@@ -199,7 +200,8 @@ const app = new Vue({
                 const newReceivedMsg = {
                     date: nowReceived, 
                     text: 'Ok.',
-                    status: 'received'
+                    status: 'received',
+                    msgPopup: false,
                 };
                 selectedMsgArr.push(newReceivedMsg);
             }, 1000);
