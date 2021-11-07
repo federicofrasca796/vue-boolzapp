@@ -172,12 +172,31 @@ a:hover{
 /* Message element */
 .msg{
     position: relative;
-    border-radius: .3rem;
     max-width: 50%;
 }
 .sent_msg{
     background-color: var(--sent_msg);
+    border-radius: .3rem 0 .3rem .3rem;
     align-self: flex-end;
+}
+.sent_msg::after{
+    content: url('../../../img/wing-right.svg');
+    width: 11px;
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+.received_msg{
+    background-color: var(--received_msg);
+    border-radius: 0 .3rem .3rem;
+    align-self: flex-start;
+}
+.received_msg::before{
+    content: url('../../../img/wing-left.svg');
+    width: 11px;
+    position: absolute;
+    top: 0;
+    right: 100%;
 }
 
 .msg_content{
@@ -189,11 +208,6 @@ a:hover{
     text-align: end;
 }
 
-.received_msg{
-    background-color: var(--received_msg);
-    align-self: flex-start;
-
-}
 
 .msg_hover{
     visibility: hidden;
